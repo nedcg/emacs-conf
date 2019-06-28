@@ -1,4 +1,4 @@
-(setq-default cursor-type '(bar . 1)
+(setq-default cursor-type '(bar . 3)
               show-trailing-whitespace t
               indicate-empty-lines t
               truncate-lines t)
