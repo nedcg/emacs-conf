@@ -6,7 +6,6 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
       backup-by-copying t
       backup-directory-alist `(("." . "~/.saves"))
-      beacon-color "#5f00ff"
       create-lockfiles nil
       custom-file (expand-file-name "custom.el" user-emacs-directory)
       delete-old-versions t
