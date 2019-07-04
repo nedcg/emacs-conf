@@ -1,7 +1,7 @@
-(load "package")
-(package-initialize)
+(require 'package)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -114,23 +114,21 @@
   (add-hook 'clojurescript-mode-hook #'aggressive-indent-mode)
   (add-hook 'clojurescript-mode-hook #'rainbow-delimiters-mode))
 
-(use-package powerline
-  :ensure t
-  :init (powerline-default-theme))
+(use-package rainbow-mode
+  :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(beacon-color "red")
- '(package-selected-packages
-   (quote
-    (yaml-mode find-file-in-project powerline web-mode use-package smex smartparens rainbow-delimiters nginx-mode multiple-cursors json-mode iedit dumb-jump cider beacon avy aggressive-indent))))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "mac:textBackgroundColor" :foreground "mac:textColor" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "nil" :family "Monaco"))))
- '(cursor ((t (:background "red")))))
+ '(clojure-keyword-face ((t (:foreground "black" :weight bold))))
+ '(font-lock-comment-face ((t (:background "color-230"))))
+ '(font-lock-function-name-face ((t (:foreground "blue1" :underline t))))
+ '(font-lock-variable-name-face ((t (:foreground "blue1")))))

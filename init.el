@@ -6,6 +6,7 @@
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t))
       backup-by-copying t
       backup-directory-alist `(("." . "~/.saves"))
+      beacon-color "#5f00ff"
       create-lockfiles nil
       custom-file (expand-file-name "custom.el" user-emacs-directory)
       delete-old-versions t
@@ -36,6 +37,7 @@
 (delete-selection-mode t)
 (transient-mark-mode t)
 (subword-mode)
+(show-paren-mode t)
 
 (defun sk/smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
@@ -47,7 +49,6 @@ If ARG is not nil or 1, move forward ARG - 1 lines first.  If
 point reaches the beginning or end of the buffer, stop there."
   (interactive "^p")
   (setq arg (or arg 1))
-  ;; Move lines first
   (when (/= arg 1)
     (let ((line-move-visual nil))
       (forward-line (1- arg))))
@@ -62,9 +63,11 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; remap C-a to `smarter-move-beginning-of-line`
 (global-set-key [remap move-beginning-of-line]
                 'sk/smarter-move-beginning-of-line)
+
+(mac-auto-operator-composition-mode)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (when (not indicate-empty-lines)
   (toggle-indicate-empty-lines))
