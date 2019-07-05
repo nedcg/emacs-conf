@@ -36,7 +36,6 @@
 (delete-selection-mode t)
 (transient-mark-mode t)
 (subword-mode)
-(show-paren-mode t)
 
 (defun sk/smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.

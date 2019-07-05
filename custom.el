@@ -122,7 +122,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages
+   (quote
+    (darkroom yaml-mode web-mode use-package smex smartparens rainbow-mode rainbow-delimiters nginx-mode multiple-cursors json-mode iedit hydra find-file-in-project dumb-jump cider beacon avy aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -130,6 +132,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:background "mac:textBackgroundColor" :foreground "mac:textColor" :height 160 :family "Fira Code"))))
  '(clojure-keyword-face ((t (:foreground "black" :weight bold))))
- '(font-lock-comment-face ((t (:background "color-230"))))
+ '(font-lock-comment-face ((t (:background "#fffacd"))))
  '(font-lock-function-name-face ((t (:foreground "blue1" :underline t))))
  '(font-lock-variable-name-face ((t (:foreground "blue1")))))
